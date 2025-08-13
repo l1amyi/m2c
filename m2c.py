@@ -34,6 +34,7 @@ def main():
         if tool_chain_path == None:
             print("未找到 armcc 路径")
             return
+        tool_chain_path = tool_chain_path.replace("\\", "/")
 
     mdk2cmake(uvprojx_path, control_string_path, output_dir, tool_chain_path)
 
