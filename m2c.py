@@ -29,14 +29,16 @@ def main():
     output_dir = output_dir.replace("\\", "/")
     tool_chain_path = tool_chain_path.replace("\\", "/") if tool_chain_path else None
     
+    tool_chain_dir = None
     if tool_chain_path == None:
         tool_chain_path = find_armcc_by_common_path()
         if tool_chain_path == None:
             print("未找到 armcc 路径")
             return
         tool_chain_path = tool_chain_path.replace("\\", "/")
+        tool_chain_dir = os.path.dirname(tool_chain_path)
 
-    mdk2cmake(uvprojx_path, control_string_path, output_dir, tool_chain_path)
+    mdk2cmake(uvprojx_path, control_string_path, output_dir, tool_chain_dir)
 
 if __name__ == "__main__":
     main()
