@@ -1,0 +1,17 @@
+[compiler_control_string]
+--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/ST/ARM/DSP/Inc -I ../foc -I ../Drivers/CMSIS/DSP/Include
+-IC:/Users/liyi/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include
+-D__UVISION_VERSION="542" -DSTM32F405xx -DUSE_HAL_DRIVER -DSTM32F405xx -D__FPU_PRESENT="1"
+-o FOC\*.o --omf_browse FOC\*.crf --depend FOC\*.d
+
+
+
+[assembler_control_string]
+--cpu Cortex-M4.fp.sp -g --apcs=interwork --pd "__MICROLIB SETA 1" -I ../Core/Inc 
+-I C:\Users\liyi\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include 
+--pd "__UVISION_VERSION SETA 542" --pd "STM32F405xx SETA 1" --list "*.lst" --xref -o "*.o" --depend "*.d" 
+
+
+[linker_control_string]
+--cpu Cortex-M4.fp.sp *.o 
+--library_type=microlib --strict --scatter "FOC\FOC.sct" 

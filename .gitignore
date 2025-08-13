@@ -1,0 +1,32 @@
+# Python 缓存文件
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# 虚拟环境
+.venv/
+venv/
+env/
+
+# 构建产物
+build/
+dist/
+*.egg-info/
+*.spec
+
+# IDE 配置
+.vscode/
+.idea/
+
+# 环境/配置文件
+.python-version
+.env
+
+# 测试数据临时文件
+test_data/tmp_*
+test_data/*.log
+
+# 操作系统生成的无关文件
+.DS_Store
+Thumbs.db
